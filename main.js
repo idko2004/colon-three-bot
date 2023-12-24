@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const config = require('./config.json');
 
-let emojis = ['F', ':D', '>:3', ':3', 'uwu', 'unu', 'UwU', 'UnU', ':o', ':c', ':v', ':p', ':/'];
+let emojis = ['F', ':D', '>:3', ':3', 'uwu', 'unu', 'owo', 'UwU', 'UnU', 'OwO', ':o', ':c', ':v', ':p', ':/', 'c:', ':)'];
 
 const client = new Discord.Client(
 {
