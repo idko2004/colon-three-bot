@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const config = require('./config.json');
 
-let emojis = ['F', ':D', '>:3', ':3', 'uwu', 'unu', 'owo', 'UwU', 'UnU', 'OwO', ':o', ':c', ':v', ':p', ':/', 'c:', ':)'];
+let emojis = ['F', ':D', '>:3', ':3', 'uwu', 'unu', 'owo', 'twt', 'UwU', 'UnU', 'OwO', 'TwT', ':o', ':O', ':0', ':c', ':v', ':V', ':p', ':P', ':/', 'c:', ':)', ':(', ":'(", ":'c", ':>', ':<'];
 
 console.log(new Date().toString());
 
@@ -62,7 +62,7 @@ async function sendMessagesAtStartup()
 {
 	try
 	{
-		const random = require('./random');
+		let random = require('./random');
 
 		let channel;
 		let emoji;
