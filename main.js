@@ -43,7 +43,7 @@ client.on(Discord.Events.MessageCreate, async (msg) =>
 		{
 			let toReply = textContainsEmoji(msgSplitted[i]);
 			
-			if(toReply === null) return;
+			if(toReply === null) continue;
 
 			msg.channel.send(toReply);
 		}
