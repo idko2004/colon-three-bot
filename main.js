@@ -60,7 +60,7 @@ function textContainsEmoji(text)
 
 	for(let i = 0; i < emojis.length; i++) //Iterar sobre todos los emojis
 	{
-		if(text.length <= emojis[i]) continue; //Si el texto es más corto que el emoji, no hay forma de que sea ese emoji
+		if(text.length < emojis[i].length) continue; //Si el texto es más corto que el emoji, no hay forma de que sea ese emoji
 
 		validEmoji = false;
 		for(let iChar = 0; iChar < text.length; iChar++) //Iterar sobre los caracteres del texto
