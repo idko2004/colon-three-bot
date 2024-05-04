@@ -1,0 +1,7 @@
+{
+	"DISCORD_TOKEN": "<Your Discord bot token>",
+	"MESSAGE_AT_STARTUP":
+	[
+		"<Channel ID of a channel the bot has access to (optional)>"
+	]
+}
