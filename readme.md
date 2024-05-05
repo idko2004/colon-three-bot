@@ -6,7 +6,7 @@ if you send `:3`, it will reply `:3` too.
 It's a very useless bot, but we love it.
 
 ## How to set up
-### 1. Install node and npm (if you don't have them alredy)
+### 1. Install node and npm (if you don't have them already)
 If you type `node --version` or `npm --version` into a terminal, if you see some numbers, it means that you have them installed, if not and it fails, it means will have to install them.
 
 #### 1.1 How to install node and npm
