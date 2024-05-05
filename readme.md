@@ -7,7 +7,7 @@ It's a very useless bot, but we love it.
 
 ## How to set up
 ### 1. Install node and npm (if you don't have them already)
-If you type `node --version` or `npm --version` into a terminal, if you see some numbers, it means that you have them installed, if not and it fails, it means will have to install them.
+If you type `node --version` or `npm --version` into a terminal, if you see some numbers, it means that you have them installed, if not and it fails, it means you will have to install them.
 
 #### 1.1 How to install node and npm
 If you are on linux, you can install it through your package manager, or you can install [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script), and once installed [follow this](https://github.com/nvm-sh/nvm?tab=readme-ov-file#usage)
