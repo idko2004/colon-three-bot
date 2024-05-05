@@ -52,7 +52,7 @@ Now you have a Discord bot!
 ##### 4.1.2 Bot tab
 Go to the bot tab on the left.
 
-In the section Privileged Gateway Intents, turn on the `Server Members Intent` toggle.
+In the section Privileged Gateway Intents, turn on the `Server Members Intent` and `Message Content Intent` toggle.
 
 In the Build-A-Bot section you can customize your bot's profile picture, name and banner.
 
