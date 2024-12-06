@@ -1,8 +1,10 @@
 const Discord = require('discord.js');
-
+const random = require('./random');
 const config = require('./config.json');
 
-let emojis = [':D', '>:3', ':3', 'D:', 'c:', ':)', ':(', ":'(", 'uwu', 'unu', 'owo', 'twt', 'UwU', 'UnU', 'OwO', 'TwT', ':o', ':O', ':0', ':c', ':v', ':V', ':p', ':P', ':/', ':\\', ':|', ":'c", ':>', ':<', 'F'];
+const emojis = [':D', '>:3', ':3', 'D:', 'c:', ':)', ':(', ":'(", 'uwu', 'unu', 'owo', 'twt', 'UwU', 'UnU', 'OwO', 'TwT', ':o', ':O', ':0', ':c', ':v', ':V', ':p', ':P', ':/', ':\\', ':|', ":'c", ':>', ':<', 'F'];
+
+const soVariants = ['so', 'so jsjfsfjsh', 'so hahaha', 'sito', 'sote', 'so :cheese:', 'so asdfhasdfj', 'so asjdfasdfj', 'so asdfjasdf', 'so asdfasdf', 'so jsjs', 'so :D', 'so asjfasjdfasjdfaksdfjaksjdfs'];
 
 console.log(new Date().toString());
 
@@ -23,6 +25,8 @@ const client = new Discord.Client(
 
 //Poner que el cliente es en realidad Discord de Android, no sé si a discord le guste esto pero es que el bot está corriendo en un móvil con android, no puedo no poner que el icono de que está conectado sea un móvil
 Discord.DefaultWebSocketManagerOptions.identifyProperties.browser = 'Discord Android';
+
+const cheeseJokeIsEmpty = Object.keys(config.CHEESE_RESPONSE_THAT_ONLY_MAKES_SENSE_IN_SPANISH) == 0;
 
 client.on(Discord.Events.ClientReady, async (e) =>
 {
@@ -46,6 +50,21 @@ client.on(Discord.Events.MessageCreate, async (msg) =>
 			if(toReply === null) continue;
 
 			msg.channel.send(toReply);
+			return;
+		}
+
+		if(!cheeseJokeIsEmpty)
+		{
+			if(!config.CHEESE_RESPONSE_THAT_ONLY_MAKES_SENSE_IN_SPANISH[msg.guildId]) return;
+
+			if(textValidForCheeseJoke(msgSplitted[msgSplitted.length - 1]))
+			{
+				let so;
+				if(Math.random() > 0.8) so = soVariants[random.range(0,soVariants.length-1)];
+				else so = soVariants[0];
+				
+				msg.channel.send(so);
+			}
 		}
 	}
 	catch(err)
@@ -91,7 +110,6 @@ function textContainsEmoji(text)
 
 		if(validEmoji)
 		{
-			console.log('Returning emoji', emojis[i]);
 			return emojis[i];
 		}
 	}
@@ -99,12 +117,25 @@ function textContainsEmoji(text)
 	return null;
 }
 
+function textValidForCheeseJoke(msg)
+{
+	msg = msg.toLowerCase();
+	switch(msg)
+	{
+		case 'que':
+		case 'qué':
+		case 'que?':
+		case 'que??':
+		case 'q':
+		return true;
+	}
+	return false;
+}
+
 async function sendMessagesAtStartup()
 {
 	try
 	{
-		let random = require('./random');
-
 		let channel;
 		let emoji;
 		for(let i = 0; i < config.MESSAGE_AT_STARTUP.length; i++)

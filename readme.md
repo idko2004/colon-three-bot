@@ -75,6 +75,28 @@ MESSAGE_AT_STARTUP:
 ]
 ```
 
+#### 4.3 Cheese response that only makes sense in spanish
+In spanish, `queso` is the word for `cheese`, and `qué` is the word for `what`, so, when someone says `qué`, you should reply `so` if you are a good friend who is very funny.
+
+Wawau can say `so` too, and the way you configure it is this:
+
+There should be a section in the config like this:
+```
+	"CHEESE_RESPONSE_THAT_ONLY_MAKES_SENSE_IN_SPANISH":
+	{
+		"<Server ID (optional)>": true
+	}
+```
+
+If you have developer mode active on discord, you should be able to copy the ID of a server by right-clicking on it's icon. Paste the Server ID where it says `<Server ID (optional)>`.
+
+After the `:` you need to specify if you want to have this feature enabled on that server or not, `true` to enable it, `false` to disable it.
+
+If you don't want this feature at all (completely understandable), leave the `{}` empty, like this:
+```
+	"CHEESE_RESPONSE_THAT_ONLY_MAKES_SENSE_IN_SPANISH": {}
+```
+
 ### 5. Run the bot
 Now it's time to run the bot!
 

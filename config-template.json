@@ -3,5 +3,9 @@
 	"MESSAGE_AT_STARTUP":
 	[
 		"<Channel ID of a channel the bot has access to (optional)>"
-	]
+	],
+	"CHEESE_RESPONSE_THAT_ONLY_MAKES_SENSE_IN_SPANISH":
+	{
+		"<Server ID (optional)>": true
+	}
 }
