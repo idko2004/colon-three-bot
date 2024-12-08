@@ -125,8 +125,11 @@ function textValidForCheeseJoke(msg)
 		case 'que':
 		case 'qué':
 		case 'que?':
+		case 'qué?':
 		case 'que??':
+		case 'qué??':
 		case 'q':
+		case 'q?':
 		return true;
 	}
 	return false;
