@@ -35,6 +35,18 @@ client.on(Discord.Events.ClientReady, async (e) =>
 	sendMessagesAtStartup();
 });
 
+client.on(Discord.Events.Error, (e) =>
+{
+	console.log("ALGO SALIÓ MAL!!\n", e);
+	console.log("Esto podría ser mala idea, pero intentando iniciar sesión otra vez después del error.");
+	start();
+});
+
+client.on(Discord.Events.Warn, (e) =>
+{
+	console.log("WARNING\n", e);
+});
+
 
 client.on(Discord.Events.MessageCreate, async (msg) =>
 {
@@ -50,6 +62,7 @@ client.on(Discord.Events.MessageCreate, async (msg) =>
 			if(toReply === null) continue;
 
 			msg.channel.send(toReply);
+			console.log(toReply);
 			return;
 		}
 
@@ -64,6 +77,7 @@ client.on(Discord.Events.MessageCreate, async (msg) =>
 				else so = soVariants[0];
 				
 				msg.channel.send(so);
+				console.log(so);
 			}
 		}
 	}
@@ -158,11 +172,13 @@ async function sendMessagesAtStartup()
 
 async function start()
 {
+	console.log('start sequence!');
 	let tryAgain = true;
 	while(tryAgain)
 	{
 		try
 		{
+			console.log('Attempting to log in...');
 			await client.login(config.DISCORD_TOKEN);
 			tryAgain = false;
 		}
