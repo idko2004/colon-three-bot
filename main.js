@@ -169,6 +169,17 @@ async function sendMessagesAtStartup()
 	}
 }
 
+function wait(ms)
+{
+	return new Promise(function(good, bad)
+	{
+		setTimeout(function()
+		{
+			good();
+		}, ms);
+	});
+}
+
 
 async function start()
 {
@@ -185,6 +196,8 @@ async function start()
 		catch(err)
 		{
 			console.error('\n--HA OCURRIDO UN ERROR-- (start)\n', err);
+			console.log('Esperando para volver a intentar...');
+			await wait(5000);
 			tryAgain = true;
 		}
 	}
