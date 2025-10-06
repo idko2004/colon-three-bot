@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 const random = require('./random');
 const config = require('./config.json');
 
-const emojis = [':D', '>:3', ':3', 'D:', 'c:', ':)', ':(', ":'(", 'uwu', 'unu', 'owo', 'twt', 'UwU', 'UnU', 'OwO', 'TwT', ':o', ':O', ':0', ':c', ':v', ':V', ':p', ':P', ':/', ':\\', ':|', ":'c", ':>', ':<', 'F'];
+const emojis = [':D', '>:3', ':3', 'D:', 'c:', "C:", ':)', ':(', ":'(", ":')", 'uwu', 'unu', 'owo', 'twt', 'UwU', 'UnU', 'OwO', 'TwT', "UWU", "OWO", "TWT", ':o', ':O', ':0', ':c', ":C", ':v', ':V', ':p', ':P', ':/', ':\\', ':|', ":'c", "c':", ":'C", "C':", ':>', ':<', "^w^", "^W^", 'F'];
 
-const soVariants = ['so', 'so jsjfsfjsh', 'so hahaha', 'sito', 'sote', 'so :cheese:', 'so asdfhasdfj', 'so asjdfasdfj', 'so asdfjasdf', 'so asdfasdf', 'so jsjs', 'so :D', 'so asjfasjdfasjdfaksdfjaksjdfs'];
-
+const soVariants = ['so', 'so jsjfsfjsh', 'so hahaha', 'sito', 'sote', 'so :cheese:', 'so asdfhasdfj', 'so asjdfasdfj', 'so asdfjasdf', 'so asdfasdf', 'so jsjs', 'so :D', 'so asjfasjdfasjdfaksdfjaksjdfs', "so jvñdwifjdmaldksksjfkakaKKskfkajsmkkskkdkcjKdkdlaxlso", "so ejhekljdsafj{afjañg{js", "https://static.wikia.nocookie.net/hollowknight/images/c/ca/Zote_Circle.png/revision/latest/scale-to-width-down/150?cb=20180124235820&path-prefix=es"];
+ 
 console.log(new Date().toString());
 
 const client = new Discord.Client(
@@ -38,8 +38,6 @@ client.on(Discord.Events.ClientReady, async (e) =>
 client.on(Discord.Events.Error, (e) =>
 {
 	console.log("ALGO SALIÓ MAL!!\n", e);
-	console.log("Esto podría ser mala idea, pero intentando iniciar sesión otra vez después del error.");
-	start();
 });
 
 client.on(Discord.Events.Warn, (e) =>
@@ -142,8 +140,17 @@ function textValidForCheeseJoke(msg)
 		case 'qué?':
 		case 'que??':
 		case 'qué??':
+		case 'que?!':
+		case 'qué?!':
 		case 'q':
 		case 'q?':
+		case 'q?!':
+		case 'pq':
+		case 'pq?':
+		case 'porque':
+		case 'porque?':
+		case 'porqué':
+		case 'porqué?':
 		return true;
 	}
 	return false;
